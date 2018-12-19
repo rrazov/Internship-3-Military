@@ -17,7 +17,20 @@ namespace Military
 
         public double Move(int distance)
         {
-            return 1;
+            double newDistance = distance;
+            for (int i = 10; i < distance; i+=10)
+            {
+                if (RandomNumber() < 30)
+                {
+                    newDistance += 5;
+                }
+            }
+            return newDistance;
         }
+
+        public override string Print()
+      {
+            return base.Print() + $"TotalFuelConsumption";
+      }
     }
 }

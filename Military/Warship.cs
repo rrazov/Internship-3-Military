@@ -15,9 +15,20 @@ namespace Military
             Capacity = (int)CapacityEnum.Warship;
 
         }
-        public double Swim(int dicstance)
+        public double Swim(int distance)
         {
-            return 1;
+            double timeToTravel = (distance/AverageSpeed);
+            double newDistance = distance;
+
+            for (int i = 10; i < timeToTravel; i+=10)
+            {
+                if (RandomNumber() < 50)
+                {
+                    newDistance += 3;
+                }
+            }
+
+            return newDistance;
         }
     }
 }

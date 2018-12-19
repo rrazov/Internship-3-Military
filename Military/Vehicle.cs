@@ -17,6 +17,13 @@ namespace Military
             return $"Id: {Id}, Weight: {Weight}, Average speed: {AverageSpeed}, Fuel consumption: {FuelConsumption}, Capacity{Capacity}";
         }
 
+        public int RandomNumber()
+        {
+            Random rnd = new Random();
+            int randomNumber = rnd.Next(0,101);
+            return randomNumber;
+
+        }
         
     }
 }

@@ -15,13 +15,32 @@ namespace Military
             Capacity = (int)CapacityEnum.Amfibia;
         }
 
-        public double Swim(int dicstance)
-        {
-            return 1;
-        }
         public double Move(int distance)
         {
-            return 1;
+            double newDistance = distance;
+            for (int i = 10; i < distance; i+=10)
+            {
+                if (RandomNumber() < 30)
+                {
+                    newDistance += 5;
+                }
+            }
+            return newDistance;
+        }
+        public double Swim(int distance)
+        {
+            double timeToTravel = (distance/AverageSpeed);
+            double newDistance = distance;
+
+            for (double i = 0.1; i < timeToTravel; i += 0.1)
+            {
+                if (RandomNumber() < 50)
+                {
+                    newDistance += 3;
+                }
+            }
+
+            return newDistance;
         }
     }
 }
