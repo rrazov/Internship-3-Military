@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Military.Classes;
+using Military.Enums;
+using Military.Interfaces;
 
 namespace Military
 {
@@ -23,7 +26,7 @@ namespace Military
             Console.Write("Enter the sea part of the route: "); int amfibiaDistanceSwim = int.Parse(Console.ReadLine());
             Console.Write("Enter the number of soldiers that must be transported: "); int soldiersToTransport = int.Parse(Console.ReadLine());
 
-            // Calculation of total distance
+            // Calculation of total distance    
             tankDistance = leopard2.Move(tankDistance);
             warshipDistance = zumwaltClass.Swim(warshipDistance);
             var totalAmfibiaDistance = amfibiaPTS.Move(amfibiaDistanceMove) + amfibiaPTS.Swim(amfibiaDistanceSwim);

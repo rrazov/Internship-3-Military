@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Military.Interfaces;
+using Military.Enums;
 
-namespace Military
+namespace Military.Classes
 {
     public class Warship:Vehicle,ISwimmable
     {

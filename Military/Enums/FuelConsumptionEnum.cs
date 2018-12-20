@@ -1,4 +1,4 @@
-namespace Military
+namespace Military.Enums
 {
     public enum FuelConsumptionEnum
     {

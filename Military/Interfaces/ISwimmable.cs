@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Military
+namespace Military.Interfaces
 {
     public interface ISwimmable
     {
