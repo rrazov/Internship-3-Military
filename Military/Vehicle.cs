@@ -14,7 +14,7 @@ namespace Military
 
         public virtual string Print()
         {
-            return $"Id: {Id}, Weight: {Weight}, Average speed: {AverageSpeed}, Fuel consumption: {FuelConsumption}, Capacity: {Capacity}";
+            return $" Id: {Id}, Weight: {Weight}, Average speed: {AverageSpeed}, Fuel consumption: {FuelConsumption}, Capacity: {Capacity}";
         }
 
         public int RandomNumber()
@@ -25,7 +25,7 @@ namespace Military
 
         }
 
-        public double TotalFuelConsumption(double distance, int peopleToTransport)
+        public double TotalFuelConsumption(int distance, int peopleToTransport)
         {
             double fuelConsumptionForOneDirection = distance * (FuelConsumption/100);
             double totalFuelConsumption = fuelConsumptionForOneDirection;

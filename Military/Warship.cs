@@ -15,12 +15,12 @@ namespace Military
             Capacity = (int)CapacityEnum.Warship;
 
         }
-        public double Swim(int distance)
+        public int Swim(int distance)
         {
             double timeToTravel = (distance/AverageSpeed);
             double newDistance = distance;
 
-            for (int i = 10; i < timeToTravel; i+=10)
+            for (double i = 0.1; i < timeToTravel; i += 0.1)
             {
                 if (RandomNumber() < 50)
                 {
@@ -28,7 +28,12 @@ namespace Military
                 }
             }
 
-            return newDistance;
+            return (int)newDistance;
         }
+
+        public virtual string Print(int distance, int peopleToTransport )
+        {
+            return base.Print() + $" ,TotalFuelConsumption: {TotalFuelConsumption(distance , peopleToTransport)} ";
+        }   
     }
 }

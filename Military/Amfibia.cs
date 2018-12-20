@@ -15,9 +15,9 @@ namespace Military
             Capacity = (int)CapacityEnum.Amfibia;
         }
 
-        public double Move(int distance)
+        public int Move(int distance)
         {
-            double newDistance = distance;
+            int newDistance = distance;
             for (int i = 10; i < distance; i+=10)
             {
                 if (RandomNumber() < 30)
@@ -27,7 +27,7 @@ namespace Military
             }
             return newDistance;
         }
-        public double Swim(int distance)
+        public int Swim(int distance)
         {
             double timeToTravel = (distance/AverageSpeed);
             double newDistance = distance;
@@ -40,7 +40,12 @@ namespace Military
                 }
             }
 
-            return newDistance;
+            return (int)newDistance;
         }
+
+        public virtual string Print(int distance, int peopleToTransport )
+        {
+            return base.Print() + $" ,TotalFuelConsumption: {TotalFuelConsumption(distance , peopleToTransport)} ";
+        }   
     }
 }

@@ -6,6 +6,6 @@ namespace Military
 {
     public interface IDriveable
     {
-         double Move(int distance);
+         int Move(int distance);
     }
 }

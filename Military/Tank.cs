@@ -16,9 +16,9 @@ namespace Military
             Capacity = (int)CapacityEnum.Tank;
         }
 
-        public double Move(int distance)
+        public int Move(int distance)
         {
-            double newDistance = distance;
+            int newDistance = distance;
             for (int i = 10; i < distance; i+=10)
             {
                 if (RandomNumber() < 30)
@@ -29,9 +29,9 @@ namespace Military
             return newDistance;
         }
 
-        public virtual string Print(double distance, int peopleToTransport )
+        public virtual string Print(int distance, int peopleToTransport)
         {
-            return base.Print() + $" TotalFuelConsumption: {TotalFuelConsumption(Move((int)distance), peopleToTransport)} ";
+            return base.Print() + $" ,TotalFuelConsumption: {TotalFuelConsumption(distance , peopleToTransport)} ";
         }   
 
     }
