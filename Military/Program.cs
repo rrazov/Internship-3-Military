@@ -52,9 +52,8 @@ namespace Military
                 bestChoice = TotalFuelConsumptionWarship;
                 bestChoiceString = "WARSHIP!";
             }
-            else if (bestChoice > TotalFuelConsumptionAmfibia)
+            if (bestChoice > TotalFuelConsumptionAmfibia)
             {
-                bestChoice = TotalFuelConsumptionAmfibia;
                 bestChoiceString = "AMFIBIA!";
             }
             Console.WriteLine("\n------------");
