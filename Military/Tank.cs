@@ -6,6 +6,7 @@ namespace Military
 {
     public class Tank:Vehicle,IDriveable
     {
+        
         public Tank(double weight, double averageSpeed)
         {
             Id = Guid.NewGuid();
@@ -28,9 +29,10 @@ namespace Military
             return newDistance;
         }
 
-        public override string Print()
-      {
-            return base.Print() + $"TotalFuelConsumption";
-      }
+        public virtual string Print(double distance, int peopleToTransport )
+        {
+            return base.Print() + $" TotalFuelConsumption: {TotalFuelConsumption(Move((int)distance), peopleToTransport)} ";
+        }   
+
     }
 }

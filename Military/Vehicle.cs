@@ -14,7 +14,7 @@ namespace Military
 
         public virtual string Print()
         {
-            return $"Id: {Id}, Weight: {Weight}, Average speed: {AverageSpeed}, Fuel consumption: {FuelConsumption}, Capacity{Capacity}";
+            return $"Id: {Id}, Weight: {Weight}, Average speed: {AverageSpeed}, Fuel consumption: {FuelConsumption}, Capacity: {Capacity}";
         }
 
         public int RandomNumber()
@@ -23,6 +23,19 @@ namespace Military
             int randomNumber = rnd.Next(0,101);
             return randomNumber;
 
+        }
+
+        public double TotalFuelConsumption(double distance, int peopleToTransport)
+        {
+            double fuelConsumptionForOneDirection = distance * (FuelConsumption/100);
+            double totalFuelConsumption = fuelConsumptionForOneDirection;
+
+            for (int i = 0; i < peopleToTransport; i += (Capacity/2))
+            {
+                if (i > 0)
+                    totalFuelConsumption += fuelConsumptionForOneDirection;
+            }
+            return totalFuelConsumption;
         }
         
     }
