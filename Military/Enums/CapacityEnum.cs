@@ -4,6 +4,6 @@ namespace Military.Enums
     {
         Tank = 6,
         Warship = 20,
-        Amfibia = 50
+        Amphibious = 50
     }
 }

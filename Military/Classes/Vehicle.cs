@@ -8,31 +8,31 @@ namespace Military.Classes
 {
     public abstract class Vehicle
     {
-        public Guid Id { get; set; }
-        public double Weight { get; set; }
-        public double AverageSpeed { get; set; }
-        public double FuelConsumption { get; set; }
-        public int Capacity { get; set; }
+        protected Guid Id { get; set; }
+        protected double Weight { get; set; }
+        protected double AverageSpeed { get; set; }
+        protected double FuelConsumption { get; set; }
+        protected int Capacity { get; set; }
 
-        public virtual string Print()
+        protected virtual string Print()
         {
             return $" Id: {Id}, Weight: {Weight}, Average speed: {AverageSpeed}, Fuel consumption: {FuelConsumption}, Capacity: {Capacity}";
         }
 
-        public int RandomNumber()
+        protected static int RandomNumber()
         {
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(0,101);
+            var rnd = new Random();
+            var randomNumber = rnd.Next(0,101);
             return randomNumber;
 
         }
 
         public double TotalFuelConsumption(int distance, int peopleToTransport)
         {
-            double fuelConsumptionForOneDirection = distance * (FuelConsumption/100);
-            double totalFuelConsumption = fuelConsumptionForOneDirection;
+            var fuelConsumptionForOneDirection = distance * (FuelConsumption/100);
+            var totalFuelConsumption = fuelConsumptionForOneDirection;
 
-            for (int i = 0; i < peopleToTransport; i += (Capacity/2))
+            for (var i = 0; i < peopleToTransport; i += (Capacity/2))
             {
                 if (i > 0)
                     totalFuelConsumption += fuelConsumptionForOneDirection;

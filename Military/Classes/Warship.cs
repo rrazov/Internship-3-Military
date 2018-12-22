@@ -6,7 +6,7 @@ using Military.Enums;
 
 namespace Military.Classes
 {
-    public class Warship:Vehicle,ISwimmable
+    public sealed class Warship:Vehicle,ISwimmable
     {
         public Warship(double weight, double averageSpeed)
         {
@@ -19,10 +19,10 @@ namespace Military.Classes
         }
         public int Swim(int distance)
         {
-            double timeToTravel = (distance/AverageSpeed);
-            double newDistance = distance;
+            var timeToTravel = (distance/AverageSpeed);
+            var newDistance = distance;
 
-            for (double i = 0.1; i < timeToTravel; i += 0.1)
+            for (var i = 0.1; i < timeToTravel; i += 0.1)
             {
                 if (RandomNumber() < 50)
                 {
@@ -33,7 +33,7 @@ namespace Military.Classes
             return (int)newDistance;
         }
 
-        public virtual string Print(int distance, int peopleToTransport )
+        public string Print(int distance, int peopleToTransport )
         {
             return base.Print() + $" ,TotalFuelConsumption: {TotalFuelConsumption(distance , peopleToTransport)} ";
         }   
